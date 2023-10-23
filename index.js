@@ -32,7 +32,7 @@ const server=http.createServer((req,res) => {
       'Content-type': 'text/html'
     });
 
-    const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el)).join('');
+    const cardsHtml = dataObj.map(el => replacetemplate(tempCard, el)).join('');
     const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHtml);
     res.end(output);
 
@@ -42,7 +42,7 @@ const server=http.createServer((req,res) => {
       'Content-type': 'text/html'
     });
     const product = dataObj[query.id];
-    const output = replaceTemplate(tempProduct, product);
+    const output = replacetemplate(tempProduct, product);
     res.end(output);
 
     // API
